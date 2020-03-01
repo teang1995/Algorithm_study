@@ -13,9 +13,9 @@ void inc_insertion_sort(vector<int>& array, int first, int last, int gap)
 	{
 		key = array[i];
 		/*
-		ÇöÀç Á¤·ÄµÈ ¹è¿­Àº i-gap±îÁöÀÌ¹Ç·Î i-gap¹øÂ°ºÎÅÍ ¿ª¼øÀ¸·Î Á¶»çÇÑ´Ù.
-		j°ªÀº first ÀÌ»óÀÌ¾î¾ß ÇÏ°í
-		key °ªº¸´Ù Á¤·ÄµÈ ¹è¿­¿¡ ÀÖ´Â °ªÀÌ Å©¸é j¹øÂ°¸¦ j+gap¹øÂ°·Î ÀÌµ¿ÇÑ´Ù.
+		í˜„ì¬ ì •ë ¬ëœ ë°°ì—´ì€ i-gapê¹Œì§€ì´ë¯€ë¡œ i-gapë²ˆì§¸ë¶€í„° ì—­ìˆœìœ¼ë¡œ ì¡°ì‚¬í•œë‹¤.
+		jê°’ì€ first ì´ìƒì´ì–´ì•¼ í•˜ê³ 
+		key ê°’ë³´ë‹¤ ì •ë ¬ëœ ë°°ì—´ì— ìˆëŠ” ê°’ì´ í¬ë©´ jë²ˆì§¸ë¥¼ j+gapë²ˆì§¸ë¡œ ì´ë™í•œë‹¤.
 		*/
 		for (j = i - gap; j >= first && array[j] > key; j = j - gap)
 		{
@@ -38,9 +38,9 @@ void shell_sort(vector<int>& array)
 		}
 		for (i = 0; i < gap; i++)
 		{
-			/*¿À¸§Â÷¼ø:0,1,2,3,4....*/
+			/*ì˜¤ë¦„ì°¨ìˆœ:0,1,2,3,4....*/
 			inc_insertion_sort(array, i, n - 1, gap);
-			/*³»¸²Â÷¼ø:4,3,2,1,0....*/
+			/*ë‚´ë¦¼ì°¨ìˆœ:4,3,2,1,0....*/
 			//des_insertion_sort(array, i, n - 1, gap);
 		}
 	}
@@ -51,10 +51,10 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands) {
 	vector<int> temp;
 	int i = 0;
 	int j = 0;
-	int start = 0;	//½½¶óÀÌ½Ì ½ÃÀÛ À§Ä¡
-	int end = 0;	//½½¶óÀÌ½Ì ³¡³¯ À§Ä¡
-	int index = 0;	//¹İÈ¯ÇÒ °ª
-	//commandÀÇ °¹¼ö¸¸Å­ for¹®À» ¹İº¹
+	int start = 0;	//ìŠ¬ë¼ì´ì‹± ì‹œì‘ ìœ„ì¹˜
+	int end = 0;	//ìŠ¬ë¼ì´ì‹± ëë‚  ìœ„ì¹˜
+	int index = 0;	//ë°˜í™˜í•  ê°’
+	//commandì˜ ê°¯ìˆ˜ë§Œí¼ forë¬¸ì„ ë°˜ë³µ
 	for (i = 0; i < commands.size(); i++)
 	{
 		start = commands[i][0];
